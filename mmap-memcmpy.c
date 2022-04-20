@@ -1,6 +1,6 @@
 /*
 	mmap-memcmpy - copy modified blocks of source file to destination file efficiently using mmap
-	Copyright 2020  Simon Arlott
+	Copyright 2020,2022  Simon Arlott
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	if (dst_len > src_len) {
-		printf("Destination file is larger (%zd) than input file (%zd)\n", dst_len, src_len);
+		printf("Destination file is larger (%jd) than input file (%jd)\n", (intmax_t)dst_len, (intmax_t)src_len);
 		return EX_DATAERR;
 	}
 
